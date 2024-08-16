@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="listview_item" class="listview_icon_item" style="padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
+        <ui:VisualElement name="icon" style="justify-content: flex-start; height: 100%; flex-grow: 0; flex-shrink: 1; align-items: stretch; width: 40px;">
+            <ui:VisualElement name="img" style="flex-grow: 1; justify-content: flex-start; background-image: resource(&apos;Icons/Undefined&apos;); -unity-background-scale-mode: scale-to-fit;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="labels">
+            <ui:Label text="Title" display-tooltip-when-elided="true" name="title" class="title" style="height: auto; flex-grow: 1; flex-shrink: 1;" />
+            <ui:Label text="Subtitle / Subtext" display-tooltip-when-elided="true" name="subtitle" class="subtitle" style="height: auto; flex-shrink: 1; flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

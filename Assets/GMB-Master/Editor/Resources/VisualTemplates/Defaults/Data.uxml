@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Template name="Data_Listview" src="project://database/Assets/GMB-Master/Editor/Resources/VisualTemplates/Defaults/Data_Listview.uxml?fileID=9197481963319205126&amp;guid=8ae47ee9353784f3fb706df0599cfe3d&amp;type=3#Data_Listview" />
+    <ui:Template name="Data_NoContent" src="project://database/Assets/GMB-Master/Editor/Resources/VisualTemplates/Defaults/Data_NoContent.uxml?fileID=9197481963319205126&amp;guid=e5512f455891b4b1296420ffff627890&amp;type=3#Data_NoContent" />
+    <ui:Template name="Data_Content" src="project://database/Assets/GMB-Master/Editor/Resources/VisualTemplates/Defaults/Data_Content.uxml?fileID=9197481963319205126&amp;guid=4f8c21fde55434b8b98307a0d69ae1e7&amp;type=3#Data_Content" />
+    <Style src="project://database/Assets/GMB-Master/Editor/Resources/VisualTemplates/Styles/DefaultTemplateStyle.uss?fileID=7433441132597879392&amp;guid=2b9660a59b404469c8fda7dbf9672dc0&amp;type=3#DefaultTemplateStyle" />
+    <ui:VisualElement style="flex-grow: 1; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; flex-direction: row;">
+        <ui:VisualElement name="listview_container" style="flex-grow: 0; width: 300px; border-left-color: rgb(47, 47, 47); border-right-color: rgb(47, 47, 47); border-top-color: rgb(47, 47, 47); border-bottom-color: rgb(47, 47, 47); border-right-width: 3px;">
+            <ui:Instance template="Data_Listview" name="Data_Listview" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:Instance template="Data_NoContent" name="nocontent" style="flex-grow: 1;" />
+        <ui:VisualElement name="content_container" style="flex-grow: 1;">
+            <ui:Instance template="Data_Content" name="Data_Content" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

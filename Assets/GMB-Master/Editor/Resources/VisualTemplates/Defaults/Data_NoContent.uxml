@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="nocontent" style="flex-grow: 1; display: flex; visibility: visible;">
+        <ui:Label text="NO CONTENT" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; -unity-text-align: middle-center; font-size: 12px; color: rgb(132, 132, 132); background-image: resource(&apos;Icons/home&apos;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgba(255, 255, 255, 0.19);" />
+    </ui:VisualElement>
+</ui:UXML>

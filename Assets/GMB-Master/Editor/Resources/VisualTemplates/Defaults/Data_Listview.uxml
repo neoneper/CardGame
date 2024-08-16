@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="container_listview" style="flex-direction: column; align-items: stretch; flex-grow: 1;">
+        <ui:VisualElement name="headder" class="header" style="justify-content: flex-start; align-items: center;">
+            <ui:Label text="Datas" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: flex-start; padding-left: 10px; padding-right: 0; padding-top: 0; padding-bottom: 0; -unity-text-align: middle-left;" />
+            <ui:Button text="ABC" display-tooltip-when-elided="true" name="abc" class="header_button" style="height: 30px;" />
+            <ui:Button text="CBA" display-tooltip-when-elided="true" name="bca" class="header_bt header_button" style="height: 30px;" />
+            <ui:Button text="+" display-tooltip-when-elided="true" name="bt_add" class="header_bt header_button" style="width: 30px; height: 30px; background-color: rgb(118, 190, 53); font-size: 12px; -unity-font-style: bold; color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="sub_headder" class="subheader" style="flex-direction: column; align-items: stretch; display: none;" />
+        <ui:ListView focusable="true" name="listview" virtualization-method="DynamicHeight" show-add-remove-footer="false" fixed-item-height="0" reorderable="false" show-bound-collection-size="false" style="flex-grow: 1; overflow: visible; flex-shrink: 1; max-height: none;" />
+    </ui:VisualElement>
+</ui:UXML>
