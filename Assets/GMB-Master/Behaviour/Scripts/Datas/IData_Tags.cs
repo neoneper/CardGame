@@ -6,9 +6,9 @@ namespace GMB
 {
     public interface IData_Tags
     {
-        public List<Data_Tag> GetTags();
+        public List<Data_Element> GetTags();
         public List<string> GetTagsName();
         public bool ContainsTagName(string tag);
-        public int GetTagIndex(Data_Tag tag);
+        public int GetTagIndex(Data_Element tag);
     }
 }

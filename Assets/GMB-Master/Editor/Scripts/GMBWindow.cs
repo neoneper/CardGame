@@ -24,7 +24,6 @@ namespace GMBEditor
             label = menuLabel;
             headder = menuHeadder;
         }
-   
 
         public string MenuID
         {
@@ -44,8 +43,6 @@ namespace GMBEditor
 
     public class GMBWindow : EditorWindow
     {
-        
-
         VisualElement _root; //Todos os demais conteudos estao dentro deste container
         VisualElement _menu_container; //Os menus de janelas e outros conteudos relacionados estao dentro deste container
         VisualElement _menu_content; //A lista de botoes esta dentro deste container
@@ -59,8 +56,20 @@ namespace GMBEditor
         public VisualElement content { get { return _content; } }
         public VisualElement root { get { return _root; } }
 
-
-       
+        public Color32 selectedMenuColor
+        {
+            get
+            {
+                return new Color32(255, 255, 255, 70);
+            }
+        }
+        public Color32 unSelectedMenuColor
+        {
+            get
+            {
+                return new Color32(255, 255, 255, 0);
+            }
+        }
 
         /// <summary>
         /// <para>string = Headder label, used as group to join menus of the same headder name</para>
@@ -108,34 +117,33 @@ namespace GMBEditor
 
             menuButtons.Clear();
             menus.Clear();
-
-
             content.Clear();
         }
+
 
         public void OnMenuSelected(Type winType)
         {
             Button bt = menuButtons.FirstOrDefault(r => r.userData.GetType() == winType);
-            if (bt == null)
-            {
-                return;
-            }
+            if (bt == null){ return;}
 
             if (currentSelectedWindowMenu != null)
             {
+                RefreshWinButtonHighLiht(GetCurrentMenuWinButton(), false);
                 currentSelectedWindowMenu.CloseGUI();
             }
 
             content.Clear();
 
-
             currentSelectedWindowMenu = bt.userData as IGMBEditorWindow;
             currentSelectedWindowMenu.CreateGUI(this);
+            RefreshWinButtonHighLiht(bt,true);
         }
         private void OnMenuSelected(EventBase obj)
         {
+           
             if (currentSelectedWindowMenu != null)
             {
+                RefreshWinButtonHighLiht(GetCurrentMenuWinButton(), false);
                 currentSelectedWindowMenu.CloseGUI();
             }
 
@@ -144,6 +152,8 @@ namespace GMBEditor
             VisualElement target = obj.target as VisualElement;
             currentSelectedWindowMenu = (IGMBEditorWindow)target.userData;
             currentSelectedWindowMenu.CreateGUI(this);
+
+            RefreshWinButtonHighLiht(GetCurrentMenuWinButton(), true);
         }
         private void OnButtonClicked_ShowMenu()
         {
@@ -180,12 +190,12 @@ namespace GMBEditor
 
                 if (menus.ContainsKey(menu.MenuHeadder))
                 {
-                    
+
                     menus[menu.MenuHeadder].Add(menu);
                 }
                 else
                 {
-                  
+
                     menus.Add(menu.MenuHeadder, new List<GMBWindowMenuItem>());
                     menus[menu.MenuHeadder].Add(menu);
                 }
@@ -207,7 +217,7 @@ namespace GMBEditor
                 headderElement.name = headder;
                 headderElement.Q<Label>().text = headder.ToUpper();
 
-                foreach(GMBWindowMenuItem menuItem in menus[headder])
+                foreach (GMBWindowMenuItem menuItem in menus[headder])
                 {
                     int buttonElementIndex;
                     int buttonElementsCount;
@@ -216,7 +226,7 @@ namespace GMBEditor
 
                     VisualElement buttonItemElement = _menu_content.ElementAt(buttonElementIndex);
                     Button but = buttonItemElement.Q<Button>();
-                    buttonItemElement.Q<Label>("menu_item_label").text = menuItem.MenuLabel; 
+                    buttonItemElement.Q<Label>("menu_item_label").text = menuItem.MenuLabel;
                     but.userData = menuItem.Window;
                     but.clickable.clickedWithEventInfo += OnMenuSelected;
 
@@ -242,14 +252,15 @@ namespace GMBEditor
             return AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(EditorStringsProvider._PATH_GMB_EDITOR_TEMPLATES_ + "Win_Root/Menu_Item.uxml");
 
         }
-
-        public class GMBMenuItem
+        private Button GetCurrentMenuWinButton()
         {
-            public GMBMenuItem() { }
-            public IGMBEditorWindow window;
-            public GMBWindowMenuItem menuItem;
-            VisualElement headderElement;
-            Button buttonElement;
+            return menuButtons.FirstOrDefault(r => r.userData.GetType() == currentSelectedWindowMenu.GetType());
         }
+        private void RefreshWinButtonHighLiht(Button button, bool selected)
+        {
+            StyleColor styleColor = new StyleColor(selected ? selectedMenuColor : unSelectedMenuColor);
+            button.parent.style.backgroundColor = styleColor;
+        }
+
     }
 }

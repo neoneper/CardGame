@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement name="listview-item" class="listview_icon_item" style="padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px;">
+    <ui:VisualElement name="listview-item" class="listview_icon_item" style="padding-left: 6px; padding-right: 6px; padding-top: 6px; padding-bottom: 6px; flex-direction: row;">
         <ui:VisualElement name="icon" style="justify-content: flex-start; height: 100%; flex-grow: 0; flex-shrink: 1; align-items: stretch; width: 40px;">
-            <ui:VisualElement name="img" style="flex-grow: 1; justify-content: flex-start; background-image: url(&apos;project://database/Assets/GMB-Master/Behaviour/Resources/Icons/Undefined.png?fileID=2800000&amp;guid=89e4af63673944d54921d0b6f3de0f2f&amp;type=3#Undefined&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement name="img" style="flex-grow: 1; justify-content: flex-start; background-image: url(&quot;project://database/Assets/GMB-Master/Behaviour/Resources/Icons/Undefined.png?fileID=2800000&amp;guid=89e4af63673944d54921d0b6f3de0f2f&amp;type=3#Undefined&quot;); -unity-background-scale-mode: scale-to-fit;" />
         </ui:VisualElement>
         <ui:VisualElement name="labels">
             <ui:Label text="Title" display-tooltip-when-elided="true" name="title" class="title" style="height: auto; flex-grow: 1; flex-shrink: 1; align-items: stretch; -unity-text-align: middle-left;" />

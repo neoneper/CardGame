@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="menu_item" class="gmb_menu_item" style="height: 30px;">
+    <ui:VisualElement name="menu_item" class="gmb_menu_item" style="height: 30px; flex-direction: row;">
         <ui:VisualElement name="icon" style="background-image: resource(&apos;Icons/Undefined&apos;); width: 23px; height: 23px; -unity-background-scale-mode: scale-to-fit; flex-grow: 0; flex-shrink: 0;" />
         <ui:VisualElement name="label" style="flex-grow: 1; margin-right: 0; margin-left: 10px;">
             <ui:Label text="Menu Item" display-tooltip-when-elided="true" name="menu_item_label" style="flex-shrink: 1; flex-grow: 1; align-items: stretch; justify-content: flex-start; -unity-text-align: middle-left;" />

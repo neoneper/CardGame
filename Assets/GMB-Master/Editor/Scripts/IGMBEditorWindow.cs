@@ -10,7 +10,7 @@ namespace GMBEditor
     public interface IGMBEditorWindow
     {
         /// <summary>
-        /// Informa o nome do VisualElement utilizado como boto de menuy pela janela principal <see cref="GMBWindow"/>
+        /// Informa o nome do VisualElement utilizado como botao de menu pela janela principal <see cref="GMBWindow"/>
         /// </summary>
         /// <returns></returns>
         GMBWindowMenuItem GetGMBWindowMenuItem();

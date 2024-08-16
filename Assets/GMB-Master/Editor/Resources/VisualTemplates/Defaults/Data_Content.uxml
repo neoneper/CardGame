@@ -9,8 +9,8 @@
                 <ui:VisualElement name="content_thumb" style="flex-grow: 1; flex-shrink: 1; background-image: resource(&apos;Icons/Undefined&apos;); -unity-background-scale-mode: scale-to-fit; justify-content: space-around; align-items: flex-start; flex-direction: column; flex-wrap: nowrap; height: auto;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1;">
-                <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Unnamed" binding-path="_friendlyName" name="data_name" />
-                <uie:ObjectField label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="_icon" name="data_icon" allow-scene-objects="false" style="height: 45px;" />
+                <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Unnamed" binding-path="_friendlyName" name="data_name" style="height: 20px;" />
+                <uie:ObjectField label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="_icon" name="data_icon" allow-scene-objects="false" style="height: 20px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

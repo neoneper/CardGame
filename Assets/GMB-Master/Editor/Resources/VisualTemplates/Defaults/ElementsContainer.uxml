@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="tags">
+        <ui:VisualElement name="container_content" style="flex-grow: 0; flex-shrink: 1; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgb(47, 47, 47); border-right-color: rgb(47, 47, 47); border-top-color: rgb(47, 47, 47); border-bottom-color: rgb(47, 47, 47); height: auto;">
+            <ui:VisualElement name="headder" class="header">
+                <ui:Label text="Elements" display-tooltip-when-elided="true" name="headder_label" style="flex-shrink: 1; flex-grow: 1;" />
+                <ui:Button text="+" display-tooltip-when-elided="true" name="bt_add_tag" class="header_button" style="background-color: rgb(147, 183, 15); color: rgb(0, 0, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="container" class="container" style="padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px; flex-grow: 0; flex-shrink: 0;">
+                <ui:VisualElement name="content" style="flex-grow: 0; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; flex-direction: row; flex-wrap: wrap; flex-shrink: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

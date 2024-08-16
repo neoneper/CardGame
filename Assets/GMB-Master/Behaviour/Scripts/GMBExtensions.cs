@@ -16,7 +16,7 @@ namespace GMB
             Enum.TryParse(commaSeparatedFlags, true, out flags);
             return flags;
         }
-        
+       
     }
 
 }

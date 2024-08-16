@@ -4,14 +4,14 @@
             <ui:Label text="General" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1;" />
             <ui:Button text="DELETE" display-tooltip-when-elided="true" name="bt_remove" class="bt_remove" />
         </ui:VisualElement>
-        <ui:VisualElement name="content" class="container">
+        <ui:VisualElement name="content" class="container" style="flex-grow: 1;">
             <ui:VisualElement name="icon" style="width: 80px; flex-shrink: 1; align-items: stretch; justify-content: flex-start; margin-top: 0; height: 80px; margin-right: 10px;">
                 <ui:VisualElement name="content_thumb" style="flex-grow: 1; flex-shrink: 1; background-image: resource(&apos;Icons/Undefined&apos;); -unity-background-scale-mode: scale-to-fit; justify-content: space-around; align-items: flex-start; flex-direction: column; flex-wrap: nowrap; height: auto;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1;">
-                <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Unnamed" binding-path="_friendlyName" name="data_name" />
-                <uie:ObjectField label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="_icon" name="data_icon" allow-scene-objects="false" style="height: 18px;" />
-                <uie:ObjectField label="Prefab" type="UnityEngine.GameObject, UnityEngine.CoreModule" binding-path="_prefab" name="data_prefab" allow-scene-objects="false" style="height: 18px;" />
+                <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Unnamed" binding-path="_friendlyName" name="data_name" style="height: 20px;" />
+                <uie:ObjectField label="Icon" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="_icon" name="data_icon" allow-scene-objects="false" style="height: 20px;" />
+                <uie:ObjectField label="Prefab" type="UnityEngine.GameObject, UnityEngine.CoreModule" binding-path="_prefab" name="data_prefab" allow-scene-objects="false" style="height: 20px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
