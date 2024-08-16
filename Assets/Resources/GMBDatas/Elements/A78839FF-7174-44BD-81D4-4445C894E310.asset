@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8256ef0ab3064003b1dbd0bcccb7b55, type: 3}
+  m_Name: A78839FF-7174-44BD-81D4-4445C894E310
+  m_EditorClassIdentifier: 
+  _aid: 73
+  _id: A78839FF-7174-44BD-81D4-4445C894E310
+  _createdDate: 2024/08/16 17:44:04
+  _friendlyName: Eletric
+  _description: Eletric Element
+  _icon: {fileID: -1396084755, guid: 08a683723d8594b4d8fbdfa974dff2c4, type: 3}

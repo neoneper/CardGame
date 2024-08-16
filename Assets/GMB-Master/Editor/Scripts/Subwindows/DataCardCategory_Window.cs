@@ -28,7 +28,13 @@ namespace GMBEditor
             
             return EditorStringsProvider._PATH_GMB_EDITOR_TEMPLATES_DEFAULTS.Combine("Data.uxml");
         }
-
+        protected override void OnSelectedItemChanged()
+        {
+            if (listview_selectedItem != null)
+            {
+                GetGMBWindow().AddHistoric(this, listview_selectedItem.GetFriendlyName());
+            }
+        }
         protected override string GetTemplate_ListViewItemFilePath()
         {
             return EditorStringsProvider._PATH_GMB_EDITOR_TEMPLATES_DEFAULTS.Combine("Data_Listview_Item.uxml");

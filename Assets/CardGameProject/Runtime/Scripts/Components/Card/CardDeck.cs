@@ -1,3 +1,4 @@
+using GMB;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace CardGameProject
         public event Action<Card, Vector2> OnCardDragEvent;
 
         private ObjectPool<Card> _pool = null;
-        private List<DataCard> _requestCards = new List<DataCard>();
+        private List<Data_Card> _requestCards = new List<Data_Card>();
         private List<Card> _cards = new List<Card>();
 
         public IReadOnlyList<Card> Cards => _cards;
@@ -33,10 +34,10 @@ namespace CardGameProject
         //PUBLIC METHODS
         public void AddRandomCard()
         {
-            DataCard data = DataCardCatalogue.GetRandom();
+            Data_Card data = DatabaseCatalogue.Instance.GetRandomDataCard();
             AddCard(data);
         }
-        public void AddCard(DataCard data)
+        public void AddCard(Data_Card data)
         {
 
             _requestCards.Add(data);
@@ -50,9 +51,9 @@ namespace CardGameProject
         //POLLER CALLBACKS
         private Card OnCreateCard()
         {
-            DataCard data = _requestCards.Last();
+            Data_Card data = _requestCards.Last();
             _requestCards.Remove(data);
-            Card card = Instantiate(data.CardPrefab, transform);
+            Card card = Instantiate(data.GetPrefab<Card>(), transform);
             card.SetupFromDeck(this, GetLastNodeObject(), data);
 
             return card;
@@ -61,7 +62,7 @@ namespace CardGameProject
         {
             if (card.Data == null)
             {
-                DataCard data = _requestCards.Last();
+                Data_Card data = _requestCards.Last();
                 _requestCards.Remove(data);
                 card.SetupFromDeck(this, GetLastNodeObject(), data);
             }

@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <ui:VisualElement name="tags">
+    <ui:VisualElement name="elements">
         <ui:VisualElement name="container_content" style="flex-grow: 0; flex-shrink: 1; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgb(47, 47, 47); border-right-color: rgb(47, 47, 47); border-top-color: rgb(47, 47, 47); border-bottom-color: rgb(47, 47, 47); height: auto;">
             <ui:VisualElement name="headder" class="header">
                 <ui:Label text="Elements" display-tooltip-when-elided="true" name="headder_label" style="flex-shrink: 1; flex-grow: 1;" />

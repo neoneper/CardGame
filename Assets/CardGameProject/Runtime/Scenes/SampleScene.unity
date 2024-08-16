@@ -716,8 +716,8 @@ MonoBehaviour:
     _maxCurvature: 0.5
     _maxNodeSpacing: 100
     _rotationOffset: 0
-    _maxWidth: 0
-    _originOffset: {x: 0, y: 0}
+    _maxWidth: 1137.5952
+    _originOffset: {x: 0, y: 130.34465}
 --- !u!222 &1409676217
 CanvasRenderer:
   m_ObjectHideFlags: 0

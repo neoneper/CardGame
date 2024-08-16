@@ -48,6 +48,7 @@ namespace GMBEditor
         VisualElement _menu_content; //A lista de botoes esta dentro deste container
         VisualElement _content_container; //O Conteudo apresentado indivudualmente para cada menu selecionado bem como relacionados esta dentro deste container 
         VisualElement _content; //O Conteudo apresentado indivudualmente para cada menu selecionado esta dentro deste container  
+        VisualElement _historic;
         Button _btnShowMenu;
         //Getters
         public VisualElement menuContent { get { return _menu_content; } }
@@ -78,7 +79,6 @@ namespace GMBEditor
         Dictionary<string, List<GMBWindowMenuItem>> menus = new Dictionary<string, List<GMBWindowMenuItem>>();
         List<Button> menuButtons = new List<Button>();
 
-
         IGMBEditorWindow currentSelectedWindowMenu;
 
         [MenuItem("Tools/GMBEditor")]
@@ -91,15 +91,29 @@ namespace GMBEditor
         public void CreateGUI()
         {
             _root = rootVisualElement;
+
             GetGMBWindowTemplate().CloneTree(root);
             _menu_container = root.Q("root_menu_container");
             _menu_content = menuContainer.Q("content");
             _content_container = _root.Q("root_content_container");
             _content = contentContainer.Q("content");
+
+            //Hide SHow Menu Button
             _btnShowMenu = root.Q<Button>("Btn_ShowMenu");
             _btnShowMenu.clickable.clicked += OnButtonClicked_ShowMenu;
-            BindMenus();
 
+            //Historic (Need apply from USS)
+            _historic = new VisualElement();
+            _historic.name = "historic";
+            _historic.style.height = 20;
+            _historic.style.borderTopWidth = 1;
+            _historic.style.borderTopColor = Color.black;
+            _historic.style.flexGrow = 1;
+            _historic.style.flexShrink = 1;
+            _historic.style.flexDirection = FlexDirection.Row;
+            _root.Add(_historic);
+
+            BindMenus();
         }
         private void OnDisable()
         {
@@ -119,12 +133,10 @@ namespace GMBEditor
             menus.Clear();
             content.Clear();
         }
-
-
         public void OnMenuSelected(Type winType)
         {
             Button bt = menuButtons.FirstOrDefault(r => r.userData.GetType() == winType);
-            if (bt == null){ return;}
+            if (bt == null) { return; }
 
             if (currentSelectedWindowMenu != null)
             {
@@ -136,11 +148,15 @@ namespace GMBEditor
 
             currentSelectedWindowMenu = bt.userData as IGMBEditorWindow;
             currentSelectedWindowMenu.CreateGUI(this);
-            RefreshWinButtonHighLiht(bt,true);
+            RefreshWinButtonHighLiht(bt, true);
         }
+
         private void OnMenuSelected(EventBase obj)
         {
-           
+            VisualElement target = obj.target as VisualElement;
+
+            if(target.userData == currentSelectedWindowMenu) { return; }
+
             if (currentSelectedWindowMenu != null)
             {
                 RefreshWinButtonHighLiht(GetCurrentMenuWinButton(), false);
@@ -148,12 +164,34 @@ namespace GMBEditor
             }
 
             content.Clear();
-
-            VisualElement target = obj.target as VisualElement;
             currentSelectedWindowMenu = (IGMBEditorWindow)target.userData;
             currentSelectedWindowMenu.CreateGUI(this);
 
             RefreshWinButtonHighLiht(GetCurrentMenuWinButton(), true);
+            AddHistoric(currentSelectedWindowMenu, currentSelectedWindowMenu.GetGMBWindowMenuItem().MenuLabel);
+        }
+
+        /// <summary>
+        /// Adiciona ao historico de navegacao na janela
+        /// <para> - Isto é somente um teste de historico visual. Ainda nao tem uma implementacao funcional de navegacao.</para>
+        /// </summary>
+        /// <param name="win"></param>
+        /// <param name="label"></param>
+        public void AddHistoric(IGMBEditorWindow win, string label)
+        {
+            if (_historic.childCount >= 20) 
+            {
+                _historic.RemoveAt(0);
+                _historic.RemoveAt(0);
+            }
+            //Historic
+            Button hbt = new Button();
+            hbt.text = label;
+            hbt.userData = win;
+
+           
+            _historic.Add(new Label("/"));
+            _historic.Add(hbt);
         }
         private void OnButtonClicked_ShowMenu()
         {
@@ -186,7 +224,6 @@ namespace GMBEditor
                 IGMBEditorWindow win = (IGMBEditorWindow)Activator.CreateInstance(i);
 
                 GMBWindowMenuItem menu = win.GetGMBWindowMenuItem();
-
 
                 if (menus.ContainsKey(menu.MenuHeadder))
                 {

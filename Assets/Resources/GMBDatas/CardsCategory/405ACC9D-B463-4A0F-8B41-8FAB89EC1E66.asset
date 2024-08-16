@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f567f0eb62c614aaf373194e45117d, type: 3}
+  m_Name: 405ACC9D-B463-4A0F-8B41-8FAB89EC1E66
+  m_EditorClassIdentifier: 
+  _aid: 67
+  _id: 405ACC9D-B463-4A0F-8B41-8FAB89EC1E66
+  _createdDate: 2024/08/16 17:41:59
+  _friendlyName: Attack Card
+  _description: Card of Attack Type
+  _icon: {fileID: -551658037, guid: 08a683723d8594b4d8fbdfa974dff2c4, type: 3}

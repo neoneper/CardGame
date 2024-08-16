@@ -1,0 +1,18 @@
+{
+    "name": "GMBEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f68cb3f2f18c8744983a4aa1b3864752"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

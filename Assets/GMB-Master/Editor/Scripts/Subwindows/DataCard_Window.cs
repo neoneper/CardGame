@@ -24,7 +24,7 @@ namespace GMBEditor
         ObjectField _objectField_scope;
         ObjectField _objectField_occasion;
 
-        GMBEditorTagsView _tags;
+        GMBEditorElementsView _elements;
 
         //WIndow Callbacks
         protected override void OnCreateGUI()
@@ -41,21 +41,27 @@ namespace GMBEditor
         }
         protected override void OnSelectedItemChanged()
         {
-            _tags.RefreshTagsContent(listview_selectedItem.GetTags());
+            _elements.RefreshElementsContent(listview_selectedItem.GetElements().ToList());
             _bt_category.text = listview_selectedItem.GetCategory() == null ? "Find" : listview_selectedItem.GetCategory().GetFriendlyName();
+
+            if (listview_selectedItem != null)
+            {
+                GetGMBWindow().AddHistoric(this, listview_selectedItem.GetFriendlyName());
+            }
         }
 
         #region PRIVATE UTIL FUNCTIONS
         private void InitializeItem()
         {
+           
             _bt_category = GetElement<Button>("bt_category");
             _bt_element = GetElement<Button>("bt_element");
             _bt_scope = GetElement<Button>("bt_scope");
             _bt_occasion = GetElement<Button>("bt_occasion");
             _bt_usage = GetElement<Button>("bt_usage");
 
-            _tags = new GMBEditorTagsView(this, GetElement<Button>("bt_add_tag"), GetElement<VisualElement>("tags").Q("content"));
-            _tags.OnSerializedObjectItemRequest += OnTagObjectItemRequest;
+            _elements = new GMBEditorElementsView(this, GetElement<Button>("bt_add_tag"), GetElement<VisualElement>("elements").Q("content"));
+            _elements.OnSerializedObjectItemRequest += OnElementDataFieldRequest;
 
             _objectField_category = GetElement<ObjectField>("data_category");
             _objectField_element = GetElement<ObjectField>("data_element");
@@ -65,28 +71,28 @@ namespace GMBEditor
 
             _bt_category.RegisterCallback<PointerDownEvent>(OnCategorySearch, TrickleDown.TrickleDown);
             _objectField_category.RegisterValueChangedCallback(OnItem_CategoryChanged);
-            
+
         }
         private void UnInitializeItem()
         {
             _bt_category.UnregisterCallback<PointerDownEvent>(OnCategorySearch, TrickleDown.TrickleDown);
             _objectField_category.UnregisterValueChangedCallback(OnItem_CategoryChanged);
-            _tags.OnSerializedObjectItemRequest += OnTagObjectItemRequest;
-            _tags.Unitialize();
+            _elements.OnSerializedObjectItemRequest += OnElementDataFieldRequest;
+            _elements.Unitialize();
         }
         #endregion
 
         #region FUNCTION CALLBACKS
 
-        //Tags
-        private SerializedObject OnTagObjectItemRequest()
+        //Elements
+        private SerializedObject OnElementDataFieldRequest()
         {
             return listview_selectedItem.GetSerializedObject();
         }
-        //Item
+        //Category
         private void OnCategorySearch(PointerDownEvent evt)
         {
-            DataEditorUtility.ShowSearchWindow<Data_CardCategory>("Item Categories", GUIUtility.GUIToScreenPoint(evt.position), OnItem_CategoryRequest);
+            DataEditorUtility.ShowSearchWindow<Data_CardCategory>("Card Categories", GUIUtility.GUIToScreenPoint(evt.position), OnItem_CategoryRequest);
         }
        
         private void OnItem_CategoryRequest(GMBEditorSearchProvider.SearchResult result)
@@ -115,7 +121,7 @@ namespace GMBEditor
             Label subTitle = element.Q<Label>("subtitle");
             subTitle.text = item.GetCategory()?.GetFriendlyName();
         }
-
+        
         #endregion
 
         #region PROTECTED GETTERS

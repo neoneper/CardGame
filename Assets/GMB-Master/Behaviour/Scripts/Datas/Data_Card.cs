@@ -9,7 +9,7 @@ namespace GMB
 
     [CreateAssetMenu(menuName = "GMB/Data/Data_Card")]
     [ResourcesPath("Cards")]
-    public partial class Data_Card : Data, IData_Vendor, IData_Inventory, IData_Tags
+    public partial class Data_Card : Data, IData_Vendor, IData_Inventory, IData_Elements
     {
 
         [SerializeField] private Data_CardCategory _category;
@@ -21,9 +21,8 @@ namespace GMB
         [SerializeField] private float _weight = 0.1f;
         [SerializeField] private long _buyPrice = 0;
         [SerializeField] private long _sellPrice = 0;
-        [SerializeField] private int _tagsValue = 0;
        
-        [SerializeField] private List<Data_Element> _tags = new List<Data_Element>();
+        [SerializeField] private List<Data_Element> _elements = new List<Data_Element>();
 
 
         public int GetGridRows()
@@ -34,26 +33,30 @@ namespace GMB
         {
             return _gridCols;
         }
-        public List<Data_Element> GetTags()
+        public IReadOnlyList<Data_Element> GetElements()
         {
-            return _tags;
+            return _elements;
         }
-        public List<string> GetTagsName()
+      
+        public bool ContainsElementName(string elementName)
         {
-            return _tags.Select(r => r.GetFriendlyName()).ToList();
+            return _elements.Exists(r => r.GetFriendlyName() == elementName);
         }
-        public bool ContainsTagName(string tag)
+        public bool ContainsElement(Data_Element element)
         {
-            return _tags.Count(r => r.GetFriendlyName() == tag) > 0;
+            return _elements.Exists(r=>r==element);
         }
-        public int GetTagIndex(Data_Element tag)
+        public bool ContainsElementGUID(string guid)
         {
-            return _tags.IndexOf(tag);
+            return _elements.Exists(r => r.GetID() == guid);
         }
 
         public GameObject GetPrefab()
         {
             return _prefab;
+        }
+        public T GetPrefab<T>() where T : Component {
+            return _prefab.GetComponent<T>();
         }
         public Data_CardCategory GetCategory()
         {

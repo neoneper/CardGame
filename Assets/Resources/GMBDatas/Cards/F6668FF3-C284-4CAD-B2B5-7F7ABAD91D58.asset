@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5062ff227d85148aba274edc64f24a, type: 3}
+  m_Name: F6668FF3-C284-4CAD-B2B5-7F7ABAD91D58
+  m_EditorClassIdentifier: 
+  _aid: 74
+  _id: F6668FF3-C284-4CAD-B2B5-7F7ABAD91D58
+  _createdDate: 2024/08/16 17:44:19
+  _friendlyName: Picaxu
+  _description: Este pokemon solta raios
+  _icon: {fileID: 317714164, guid: ad68022244a861e43ba0063b569e6e1c, type: 3}
+  _category: {fileID: 11400000, guid: 1aced2f2d1178c2458f73b5e3ac5ed6f, type: 2}
+  _prefab: {fileID: 9220704532722442306, guid: dfc338ef36c867e42908e94756dd5167, type: 3}
+  _maxStack: 1
+  _gridRows: 1
+  _gridCols: 1
+  _weight: 0.1
+  _buyPrice: 0
+  _sellPrice: 0
+  _elements:
+  - {fileID: 11400000, guid: c88ae1c8a85c9264cb67cd8913dde912, type: 2}

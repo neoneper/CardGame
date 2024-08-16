@@ -1,4 +1,5 @@
 
+using GMB;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,9 +25,9 @@ namespace CardGameProject
         {
             if (_card == null) { return; }
             
-            _imgCardArt.overrideSprite = _card.Data.CardArt;
-            _textCardName.text = _card.Data.CardName;
-            _textCardDescription.text = _card.Data.CardDescription;
+            _imgCardArt.overrideSprite = _card.Data.GetIcon();
+            _textCardName.text = _card.Data.GetFriendlyName();
+            _textCardDescription.text = _card.Data.GetDescription();
             RefreshCoast();
             RefreshElements();
         }
@@ -34,7 +35,8 @@ namespace CardGameProject
         public void RefreshCoast()
         {
             if (_card == null) { return; }
-            _cardCoast.Refresh(_card.Data.CardCoast);
+            //_cardCoast.Refresh(_card.Data.CardCoast);
+            _cardCoast.Refresh(1);
         }
 
         public void RefreshElements()
@@ -50,7 +52,8 @@ namespace CardGameProject
         public void RefresPopuledElements()
         {
             ClearElements();
-            foreach (DataCardElement dataElement in _card.Data.CardElements)
+           
+            foreach (Data_Element dataElement in _card.Data.GetElements())
             {
                 CardVisual_Element instantied = Instantiate(_cardElementPrefab, _elementsContent, false);
                 _elements.Add(instantied);

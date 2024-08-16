@@ -130,7 +130,7 @@ namespace CardGameProject
                     _cachedPositions.RemoveAt(index);
                     _cachedRotations.RemoveAt(index);
                     _nodeObjects.RemoveAt(index);
-                    Destroy(nodeObj.GetGameObject());
+                    DestroyImmediate(nodeObj.GetGameObject()); 
                     OnNodeRemoved(index);
                 }
                 return;

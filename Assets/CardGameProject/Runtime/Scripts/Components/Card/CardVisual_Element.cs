@@ -1,4 +1,5 @@
 
+using GMB;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,8 @@ namespace CardGameProject
     {
         [SerializeField] private Image _imgElement;
 
-        private DataCardElement _cardElement;
-        public DataCardElement CurrentElement => _cardElement;
+        private Data_Element _cardElement;
+        public Data_Element CurrentElement => _cardElement;
 
         /// <summary>
         /// Just refresh the Image Icon using the <see cref="CurrentElement"/> Data.
@@ -19,7 +20,7 @@ namespace CardGameProject
         public void Refresh()
         {
             if (_cardElement == null) { return; }
-            this._imgElement.overrideSprite = this._cardElement.ElementIcon;
+            this._imgElement.overrideSprite = this._cardElement.GetIcon();
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace CardGameProject
         /// If you want refresh the UI Image, take a look at: <seealso cref="Refresh"/>
         /// </summary>
         /// <param name="element"></param>
-        public void ChangeElement(DataCardElement element)
+        public void ChangeElement(Data_Element element)
         {
             if (this._imgElement == null)
             {

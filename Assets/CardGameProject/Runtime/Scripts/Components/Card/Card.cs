@@ -1,3 +1,4 @@
+using GMB;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,14 @@ namespace CardGameProject
     [RequireComponent(typeof(CardVisual))]
     public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
     {
-        private DataCard _data;
+        private Data_Card _data;
         private CardVisual _cardVisual;
         private CardDeck _currentDeck;
         private IPileNode _currentPileNode;
         private bool _isDragging;
         private int _defaultOrder;
 
-        public DataCard Data
+        public Data_Card Data
         {
             get
             {
@@ -38,7 +39,7 @@ namespace CardGameProject
 
 
         //INITIASLIZATORS
-        public void SetupFromDeck(CardDeck deck, IPileNode pileNode, DataCard data)
+        public void SetupFromDeck(CardDeck deck, IPileNode pileNode, Data_Card data)
         {
             this._data = data;
             this._currentDeck = deck;

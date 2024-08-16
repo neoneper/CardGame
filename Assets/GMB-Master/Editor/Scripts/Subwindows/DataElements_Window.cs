@@ -22,7 +22,13 @@ namespace GMBEditor
         {
 
         }
-
+        protected override void OnSelectedItemChanged()
+        {
+            if (listview_selectedItem != null)
+            {
+                GetGMBWindow().AddHistoric(this, listview_selectedItem.GetFriendlyName());
+            }
+        }
         protected override string GetTemplate_FilePath()
         {
             return EditorStringsProvider._PATH_GMB_EDITOR_TEMPLATES_DEFAULTS.Combine("Data.uxml");

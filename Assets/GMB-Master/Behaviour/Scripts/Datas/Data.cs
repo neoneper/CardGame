@@ -94,7 +94,7 @@ namespace GMB
         }
 
         /// <summary>
-        /// Retorna o nome do arquivo como um caminho relativo para ser usado por provedoers de pesquisa.
+        /// Retorna o nome do arquivo como um caminho relativo para ser usado por provedoers de pesquisa do Editor.
         /// Se este dado contem categoria, ele devera retornar a categoria + o nome. Ex:
         /// categoriaName/dataName
         /// </summary>

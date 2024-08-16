@@ -31,7 +31,6 @@ namespace CardGameProject
             Deck.OnCardOverExitEvent += OnCardOverExitEvent;
             UpdatePile();
         }
-
         private void OnDisable()
         {
             Deck.OnCardAddedEvent -= OnCardAdded;
@@ -42,10 +41,7 @@ namespace CardGameProject
         }
         private void Update()
         {
-            if (_updateEverTime)
-            {
-                UpdatePile();
-            }
+            if (_updateEverTime) {UpdatePile(); }
 
             foreach (Card card in Deck.Cards)
             {
@@ -106,5 +102,7 @@ namespace CardGameProject
             Deck.spaceNodeAmount = 1;
         }
 
+
+       
     }
 }
