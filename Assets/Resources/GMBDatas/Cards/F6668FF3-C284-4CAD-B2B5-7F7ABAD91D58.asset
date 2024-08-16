@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5062ff227d85148aba274edc64f24a, type: 3}
   m_Name: F6668FF3-C284-4CAD-B2B5-7F7ABAD91D58
   m_EditorClassIdentifier: 
-  _aid: 74
+  _aid: 3
   _id: F6668FF3-C284-4CAD-B2B5-7F7ABAD91D58
   _createdDate: 2024/08/16 17:44:19
   _friendlyName: Picaxu
@@ -28,3 +28,4 @@ MonoBehaviour:
   _sellPrice: 0
   _elements:
   - {fileID: 11400000, guid: c88ae1c8a85c9264cb67cd8913dde912, type: 2}
+  - {fileID: 11400000, guid: 938c33623887f8b489152c4c101383b9, type: 2}

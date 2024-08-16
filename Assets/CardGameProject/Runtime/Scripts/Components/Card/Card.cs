@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 
 namespace CardGameProject
 {
+    /// <summary>
+    /// Controlador de Cartas. Este componente cuida do Drag & Drop individual do cartao.
+    /// Por meio deste componente voce tem acesso ao <see cref="Deck"/> de cartas caso esta carta pertença a um, bem como ao 
+    /// controlador do visual <see cref="CardVisual"/> da carta.
+    /// </summary>
+    [AddComponentMenu("CardGame/Card")]
     [RequireComponent(typeof(RectTransform))]
     [RequireComponent(typeof(CardVisual))]
     public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
@@ -37,7 +43,6 @@ namespace CardGameProject
         public IPileNode INode => _currentPileNode;
         public bool IsDragging => _isDragging;
 
-
         //INITIASLIZATORS
         public void SetupFromDeck(CardDeck deck, IPileNode pileNode, Data_Card data)
         {
@@ -46,44 +51,39 @@ namespace CardGameProject
             this._currentPileNode = pileNode;
             Visual.Refresh();
         }
-
         //METHODS
         public void ClearData()
         {
             _data = null;
         }
-
         //IDRAG CALLBACKS
         public void OnBeginDrag(PointerEventData eventData)
         {
             _defaultOrder = transform.GetSiblingIndex();
             transform.SetAsLastSibling();
             _isDragging = true;
-            Deck.OnBeginCardDrag(this);
+            Deck?.OnBeginCardDrag(this);
         }
         public void OnDrag(PointerEventData eventData)
         {
             transform.position = eventData.position;
-            Deck.OnCardDrag(this, eventData.position);
+            Deck?.OnCardDrag(this, eventData.position);
         }
         public void OnEndDrag(PointerEventData eventData)
         {
             _isDragging = false;
             transform.SetSiblingIndex(_defaultOrder);
-            Deck.OnEndCardDrag(this);
+            Deck?.OnEndCardDrag(this);
         }
-
         //POINTER CALLBACKS
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Deck.OnCardOverEnter(this);
+            Deck?.OnCardOverEnter(this);
         }
-
         public void OnPointerExit(PointerEventData eventData)
         {
-            Deck.OnCardOverExit(this);
+            Deck?.OnCardOverExit(this);
         }
-
         public void OnPointerUp(PointerEventData eventData)
         {
            

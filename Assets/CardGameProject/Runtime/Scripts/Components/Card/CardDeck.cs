@@ -10,6 +10,15 @@ using UnityEngine.Pool;
 
 namespace CardGameProject
 {
+    /// <summary>
+    /// Deck de cartas. Utilize este coponente para controlocar o comportamento do deck, por exemplo:
+    /// <para>
+    ///  - Cartas de Mao
+    ///  - Cartas de Cemiterio
+    ///  - Grimório
+    /// </para>
+    /// 
+    /// </summary>
     public class CardDeck : PileBehaviour
     {
         public event Action<Card> OnCardAddedEvent;

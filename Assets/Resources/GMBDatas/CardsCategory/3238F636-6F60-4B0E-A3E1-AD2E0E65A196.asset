@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f567f0eb62c614aaf373194e45117d, type: 3}
   m_Name: 3238F636-6F60-4B0E-A3E1-AD2E0E65A196
   m_EditorClassIdentifier: 
-  _aid: 69
+  _aid: 4
   _id: 3238F636-6F60-4B0E-A3E1-AD2E0E65A196
   _createdDate: 2024/08/16 17:42:21
   _friendlyName: Potion Card

@@ -80,7 +80,7 @@ namespace CardGameProject
         {
             _cardOver = null;
             card.INode.OffsetPosition = Vector2.zero;
-            Deck.spaceNodeAmount = 0.5f;
+            Deck.spaceNodeAmount = _normalNodeSpaceAmount;
         }
 
         private void OnCardOverEnter(Card card)

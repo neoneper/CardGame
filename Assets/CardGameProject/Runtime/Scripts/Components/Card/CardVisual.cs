@@ -1,13 +1,14 @@
 
 using GMB;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Rendering.FilterWindow;
 
 namespace CardGameProject
 {
+    /// <summary>
+    /// Componente responsavel por cuidar das atualizacoes visuais de <see cref="Card"/>
+    /// </summary>
     public class CardVisual : MonoBehaviour
     {
         [SerializeField] private Card _card;
@@ -20,25 +21,24 @@ namespace CardGameProject
 
         private List<CardVisual_Element> _elements = new List<CardVisual_Element>();
 
-     
+        public Card card => _card;
+
         public void Refresh()
         {
             if (_card == null) { return; }
-            
+
             _imgCardArt.overrideSprite = _card.Data.GetIcon();
             _textCardName.text = _card.Data.GetFriendlyName();
             _textCardDescription.text = _card.Data.GetDescription();
             RefreshCoast();
             RefreshElements();
         }
-
         public void RefreshCoast()
         {
             if (_card == null) { return; }
             //_cardCoast.Refresh(_card.Data.CardCoast);
             _cardCoast.Refresh(1);
         }
-
         public void RefreshElements()
         {
             if (_card == null) { return; }
@@ -48,11 +48,10 @@ namespace CardGameProject
                 element.Refresh();
             }
         }
-
         public void RefresPopuledElements()
         {
             ClearElements();
-           
+
             foreach (Data_Element dataElement in _card.Data.GetElements())
             {
                 CardVisual_Element instantied = Instantiate(_cardElementPrefab, _elementsContent, false);
@@ -60,7 +59,6 @@ namespace CardGameProject
                 instantied.ChangeElement(dataElement);
             }
         }
-
         public void ClearElements()
         {
             foreach (CardVisual_Element element in _elements.ToArray()) //To array to force a copy of the original list. Its prevent array element changed

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f567f0eb62c614aaf373194e45117d, type: 3}
   m_Name: F0AF06E9-62AF-44C9-9025-ACCB6621963F
   m_EditorClassIdentifier: 
-  _aid: 68
+  _aid: 7
   _id: F0AF06E9-62AF-44C9-9025-ACCB6621963F
   _createdDate: 2024/08/16 17:42:17
   _friendlyName: Defense Card

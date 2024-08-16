@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8256ef0ab3064003b1dbd0bcccb7b55, type: 3}
   m_Name: B2711134-B876-4056-ABDC-1B0A3A96D3CF
   m_EditorClassIdentifier: 
-  _aid: 72
+  _aid: 10
   _id: B2711134-B876-4056-ABDC-1B0A3A96D3CF
   _createdDate: 2024/08/16 17:43:53
   _friendlyName: Plant

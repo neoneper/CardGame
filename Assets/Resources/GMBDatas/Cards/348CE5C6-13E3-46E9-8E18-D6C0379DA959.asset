@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5062ff227d85148aba274edc64f24a, type: 3}
   m_Name: 348CE5C6-13E3-46E9-8E18-D6C0379DA959
   m_EditorClassIdentifier: 
-  _aid: 66
+  _aid: 0
   _id: 348CE5C6-13E3-46E9-8E18-D6C0379DA959
   _createdDate: 2024/08/16 17:41:06
   _friendlyName: Bubasauro

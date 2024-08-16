@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8256ef0ab3064003b1dbd0bcccb7b55, type: 3}
   m_Name: E8E31FA1-A2EA-449B-A70E-7DD4C54F47C4
   m_EditorClassIdentifier: 
-  _aid: 70
+  _aid: 11
   _id: E8E31FA1-A2EA-449B-A70E-7DD4C54F47C4
   _createdDate: 2024/08/16 17:43:24
   _friendlyName: Water

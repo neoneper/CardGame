@@ -12,18 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5062ff227d85148aba274edc64f24a, type: 3}
   m_Name: AA3E16B6-286E-4AD8-AFA6-9F843310E4EC
   m_EditorClassIdentifier: 
-  _aid: 76
+  _aid: 1
   _id: AA3E16B6-286E-4AD8-AFA6-9F843310E4EC
   _createdDate: 2024/08/16 18:22:27
-  _friendlyName: Undefined
-  _description: 
-  _icon: {fileID: 0}
-  _category: {fileID: 0}
-  _prefab: {fileID: 0}
+  _friendlyName: Metapoid
+  _description: "Metapoid \xE9 um pokemom apenas de defesa. Neste primeiro estado
+    seu elemento \xE9 planta."
+  _icon: {fileID: 1923382272, guid: ad68022244a861e43ba0063b569e6e1c, type: 3}
+  _category: {fileID: 11400000, guid: bbd4a009aae8fde45a1acacbc4cb0654, type: 2}
+  _prefab: {fileID: 9220704532722442306, guid: dfc338ef36c867e42908e94756dd5167, type: 3}
   _maxStack: 1
   _gridRows: 1
   _gridCols: 1
   _weight: 0.1
   _buyPrice: 0
   _sellPrice: 0
-  _elements: []
+  _elements:
+  - {fileID: 11400000, guid: fae81f93367dafd45974450b175e5045, type: 2}
+  - {fileID: 11400000, guid: 938c33623887f8b489152c4c101383b9, type: 2}

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 473758132}
   - component: {fileID: 473758131}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (GetAcard)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,18 +181,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 93
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Get a Card
 --- !u!222 &473758132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 814420810}
   - component: {fileID: 814420809}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Button (GetACard)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 1409676216}
   - component: {fileID: 1409676218}
   m_Layer: 5
-  m_Name: Hand Cards
+  m_Name: Deck Hand Cards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

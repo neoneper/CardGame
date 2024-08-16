@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8256ef0ab3064003b1dbd0bcccb7b55, type: 3}
   m_Name: AFB5ED1C-DA34-49FC-80B4-B2485697D67E
   m_EditorClassIdentifier: 
-  _aid: 71
+  _aid: 9
   _id: AFB5ED1C-DA34-49FC-80B4-B2485697D67E
   _createdDate: 2024/08/16 17:43:35
   _friendlyName: Fire

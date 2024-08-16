@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5062ff227d85148aba274edc64f24a, type: 3}
   m_Name: CEE2B16A-DC9D-463C-B036-9AEE9274489A
   m_EditorClassIdentifier: 
-  _aid: 75
+  _aid: 2
   _id: CEE2B16A-DC9D-463C-B036-9AEE9274489A
   _createdDate: 2024/08/16 18:20:29
   _friendlyName: Charmander
   _description: Este pokemon solta fogo
   _icon: {fileID: -196556379, guid: ad68022244a861e43ba0063b569e6e1c, type: 3}
-  _category: {fileID: 11400000, guid: 1aced2f2d1178c2458f73b5e3ac5ed6f, type: 2}
+  _category: {fileID: 0}
   _prefab: {fileID: 9220704532722442306, guid: dfc338ef36c867e42908e94756dd5167, type: 3}
   _maxStack: 1
   _gridRows: 1

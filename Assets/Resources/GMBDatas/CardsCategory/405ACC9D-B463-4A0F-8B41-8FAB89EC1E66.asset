@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f567f0eb62c614aaf373194e45117d, type: 3}
   m_Name: 405ACC9D-B463-4A0F-8B41-8FAB89EC1E66
   m_EditorClassIdentifier: 
-  _aid: 67
+  _aid: 6
   _id: 405ACC9D-B463-4A0F-8B41-8FAB89EC1E66
   _createdDate: 2024/08/16 17:41:59
   _friendlyName: Attack Card

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8256ef0ab3064003b1dbd0bcccb7b55, type: 3}
   m_Name: A78839FF-7174-44BD-81D4-4445C894E310
   m_EditorClassIdentifier: 
-  _aid: 73
+  _aid: 8
   _id: A78839FF-7174-44BD-81D4-4445C894E310
   _createdDate: 2024/08/16 17:44:04
   _friendlyName: Eletric
